@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Numéricos - Propagación del Error</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DESAFÍO 3 - PROPAGACIÓN DEL ERROR</h1>
+        </div>
+
+        <div class="problems-container">
+            <!-- Problema 1: Decaimiento Radiactivo del Carbono-14 -->
+            <div class="problem-card">
+                <h2 class="problem-title">Problema 32: Decaimiento Radiactivo</h2>
+                
+                <div class="formula">
+                    f(t) = f₀ × e^(-kt)
+                </div>
+
+                <div class="steps">
+                    <h5>Descripción:</h5>
+                    <p>El decaimiento radiactivo del carbono-14 se usa para estimar la edad de material orgánico. El carbono-14 tiene una vida media de aproximadamente 5,730 años.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="f0">Cantidad inicial f₀ (%):</label>
+                    <input type="number" id="f0" step="0.01" placeholder="Ej: 100" value="100">
+                </div>
+
+                <div class="input-group">
+                    <label for="ft">Cantidad actual f(t) (%):</label>
+                    <input type="number" id="ft" step="0.01" placeholder="Ej: 77.45" value="77.45">
+                </div>
+
+                <div class="input-group">
+                    <label for="halfLife">Vida media (años):</label>
+                    <input type="number" id="halfLife" step="0.01" placeholder="5730" value="5730">
+                </div>
+
+                <button class="calculate-btn" onclick="calculateCarbonDating()">Calcular Edad</button>
+
+                <div class="result" id="carbonResult">
+                    <h4>Resultado:</h4>
+                    <p>Ingrese los valores para calcular la edad del material orgánico.</p>
+                </div>
+            </div>
+
+            <!-- Problema 2: Ley de Enfriamiento de Newton -->
+            <div class="problem-card">
+                <h2 class="problem-title">Problema 36: Ley de Enfriamiento de Newton</h2>
+                
+                <div class="formula">
+                    T(t) = Ts + (T₀ - Ts) × e^(-kt)
+                </div>
+
+                <div class="steps">
+                    <h5>Descripción:</h5>
+                    <p>La ley de enfriamiento de Newton describe cómo la temperatura de un objeto cambia con el tiempo en relación con la temperatura del entorno.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="t0">Temperatura inicial T₀ (°F):</label>
+                    <input type="number" id="t0" step="0.01" placeholder="Ej: 98.6" value="98.6">
+                </div>
+
+                <div class="input-group">
+                    <label for="ts">Temperatura del entorno Ts (°F):</label>
+                    <input type="number" id="ts" step="0.01" placeholder="Ej: 69" value="69">
+                </div>
+
+                <div class="input-group">
+                    <label for="t1">Temperatura después de 1 hora T₁ (°F):</label>
+                    <input type="number" id="t1" step="0.01" placeholder="Ej: 79.5" value="79.5">
+                </div>
+
+                <div class="input-group">
+                    <label for="targetTime">Tiempo objetivo (horas):</label>
+                    <input type="number" id="targetTime" step="0.01" placeholder="Ej: 2" value="2">
+                </div>
+
+                <button class="calculate-btn" onclick="calculateNewtonCooling()">Calcular Temperatura</button>
+
+                <div class="result" id="newtonResult">
+                    <h4>Resultado:</h4>
+                    <p>Ingrese los valores para calcular la temperatura en el tiempo objetivo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
